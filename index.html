@@ -40,24 +40,48 @@
     <dialog id="demo_modal" class="modal">
         <div class="modal-box">
             <h3 class="font-bold text-lg mb-4">Demo Access</h3>
-            <form method="dialog" class="flex flex-col gap-4">
+            <form method="dialog" class="flex flex-col gap-4" onsubmit="return validateForm(event)">
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text">Username</span>
                     </label>
-                    <input type="text" placeholder="Enter username" class="input input-bordered" />
+                    <input type="text" id="username" placeholder="Enter username" class="input input-bordered" required
+                        minlength="3" maxlength="20" pattern="[A-Za-z0-9]+"
+                        title="Username must be 3-20 characters long and contain only letters and numbers"
+                        oninput="this.classList.remove('input-error'); this.nextElementSibling.querySelector('.label-text-alt').textContent=''"
+                        oninvalid="this.classList.add('input-error'); this.nextElementSibling.querySelector('.label-text-alt').textContent=this.validationMessage" />
+                    <label class="label">
+                        <span class="label-text-alt text-error" id="username-error"></span>
+                    </label>
                 </div>
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text">Password</span>
                     </label>
-                    <input type="password" placeholder="Enter password" class="input input-bordered" />
+                    <input type="password" id="password" placeholder="Enter password" class="input input-bordered"
+                        required minlength="6" maxlength="30"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?!.*\s).{6,}"
+                        title="Password must be 6-30 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character"
+                        oninput="this.classList.remove('input-error'); this.nextElementSibling.querySelector('.label-text-alt').textContent=''"
+                        oninvalid="this.classList.add('input-error'); this.nextElementSibling.querySelector('.label-text-alt').textContent=this.validationMessage" />
+                    <label class="label">
+                        <span class="label-text-alt text-error" id="password-error"></span>
+                    </label>
                 </div>
                 <div class="modal-action">
-                    <button class="btn btn-primary">Login</button>
-                    <button class="btn" onclick="document.getElementById('demo_modal').close()">Close</button>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="button" class="btn"
+                        onclick="document.getElementById('demo_modal').close()">Close</button>
                 </div>
             </form>
+            <script>
+                function validateForm(event) {
+                    event.preventDefault();
+                    if (event.target.checkValidity()) {
+                        document.getElementById('demo_modal').close();
+                    }
+                }
+            </script>
         </div>
     </dialog>
 </body>
