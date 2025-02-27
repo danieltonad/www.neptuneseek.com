@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neptune - Coming Soon</title>
+    <link rel="icon" type="image/x-icon" href="favicon_v1.ico">
+    <link rel="icon" type="image/png" href="favicon_v1.png">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+</head>
+
+<body>
+    <dialog id="booking-modal" class="modal">
+        <div class="modal-box w-11/12 max-w-xl">
+            <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <div class="flex justify-center">
+                <stripe-buy-button buy-button-id="buy_btn_1QtTM0FQ5W50JqjkCPnGTjGm"
+                    publishable-key="pk_test_51QtO37FQ5W50JqjkStkvFd98bgUHWGdIfrHP5sM3vELeoEgEW37MHs3z29y00ybSL27jL6H4m4k9RhSaiU4GK7yV003VEHD84n">
+                </stripe-buy-button>
+            </div>
+        </div>
+    </dialog>
+
+    <header class="bg-base-100 shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="#" class="flex items-center gap-2">
+                <div class="flex flex-col items-center">
+                    <img src="/neptune.png" alt="Neptune Logo" class="w-10 h-10">
+                    <span class="text-[8px] text-gray-400">v1</span>
+                </div>
+                <span class="text-lg font-bold">Neptune</span>
+            </a>
+            <nav class="space-x-4">
+                <a href="#" class="text-base-content hover:text-primary">Home</a>
+                <a href="#" class="text-base-content hover:text-primary">About</a>
+                <a href="#" class="text-base-content hover:text-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <section class="hero min-h-[400px] bg-gradient-to-br from-base-200 to-base-300">
+        <div class="hero-content flex-col lg:flex-row-reverse gap-8">
+            <div class="max-w-xl text-left">
+                <h1 class="text-5xl font-bold mb-4">No more surprise vet bills</h1>
+                <p class="text-lg opacity-90">Compare transparent pricing and real pet parent reviews for veterinary
+                    clinics in your area.</p>
+                <div class="mt-8 form-control">
+                    <label class="label">
+                        <span class="label-text">Enter your location, ZIP code, or address</span>
+                    </label>
+                    <div class="join">
+                        <input type="text" placeholder="e.g., Portland, OR"
+                            class="input input-bordered join-item w-full" />
+                        <button class="btn btn-primary join-item">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="divider lg:divider-horizontal">TRY IT</div>
+            <div class="stats shadow">
+                <div class="stat">
+                    <div class="stat-title">Trusted By</div>
+                    <div class="stat-value">2,500+</div>
+                    <div class="stat-desc">Pet Parents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container mx-auto p-4">
+
+        <div class="text-xl font-bold p-4 bg-primary text-white">Vet Clinics around Portland, OR</div>
+        <iframe width="100%" height="200" style="border:0" loading="lazy"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d178832.0568539664!2d-122.72627366346992!3d45.51530860986944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950b0b7da97427%3A0x1c36b9e6f6d18591!2sPortland%2C%20OR!5e0!3m2!1sen!2sus&map_style=retro">
+        </iframe>
+
+        <div class="join join-vertical w-full">
+            <div class="collapse collapse-arrow join-item border border-base-300">
+                <input type="radio" name="my-accordion-1" />
+                <div class="collapse-title flex items-center">
+                    <div class="flex items-center gap-4 w-full">
+                        <div class="w-[15%] flex flex-col items-center">
+                            <div>🔱🔱🔱</div>
+
+                            <div class="text-xs font-bold text-primary animate-pulse">TOP RATED</div>
+                        </div>
+                        <div class="w-[15%] flex items-center gap-4">
+                            <div class="avatar"></div>
+                            <div class="w-12 h-12 rounded">
+                                <img src="/west_william_hospital_logo.png" alt="Pawsome Care" />
+                            </div>
+                        </div>
+                        <div class="w-[40%] flex flex-col">
+                            <div class="text-lg">Pawsome Care Clinic</div>
+                            <div class="badge badge-ghost">Earliest availability: May 15, 2025 - 9:00 AM</div>
+                        </div>
+                        <div class="w-[30%] flex flex-col gap-2">
+                            <div class="flex flex-col gap-1">
+                                <div class="flex justify-between">
+                                    <span class="text-xs">Trident Price<sup>&copy;</sup>:</span>
+                                    <span class="font-bold text-primary text-sm">$85</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-xs">Compare to others:</span>
+                                    <span class="text-xs text-gray-500">$125</span>
+                                </div>
+                                <div class="text-[10px] text-success">Save 32% compared to others</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse-content bg-base-200">
+                    <div class="flex flex-col gap-4 p-4">
+                        <h3 class="text-lg font-semibold">Next Available Appointments:</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="card bg-base-100 shadow-xl">
+                                <div class="card-body">
+                                    <h2 class="card-title">May 15, 2025</h2>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='9:00 AM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            9:00 AM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='10:30 AM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            10:30 AM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='2:00 PM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            2:00 PM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='3:30 PM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            3:30 PM
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-base-100 shadow-xl">
+                                <div class="card-body">
+                                    <h2 class="card-title">May 16, 2025</h2>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='1:00 PM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            1:00 PM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='2:30 PM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            2:30 PM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='4:00 PM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            4:00 PM
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-base-100 shadow-xl">
+                                <div class="card-body">
+                                    <h2 class="card-title">May 17, 2025</h2>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='9:00 AM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            9:00 AM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='10:30 AM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            10:30 AM
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse collapse-arrow join-item border border-base-300">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title flex items-center">
+                    <div class="flex items-center gap-4 w-full">
+                        <div class="w-[15%] flex flex-col items-center">
+                            <div>🔱🔱</div>
+                            <div class="text-xs">GOOD</div>
+                        </div>
+                        <div class="w-[15%] flex items-center gap-4">
+                            <div class="avatar"></div>
+                            <div class="w-12 h-12 rounded">
+                                <img src="/alpine_ah_logo.png" alt="Wiskers and Paws" />
+                            </div>
+                        </div>
+                        <div class="w-[40%] flex flex-col">
+                            <div class="text-lg">Wiskers and Paws Vet Center</div>
+                            <div class="badge badge-primary">Earliest availability: March 9th, 2025 - 4:00 PM</div>
+                        </div>
+                        <div class="w-[30%] flex flex-col gap-2">
+                            <div class="flex justify-between">
+                                <span class="text-xs">Trident Price<sup>&copy;</sup>:</span>
+                                <span class="font-bold text-primary text-sm">$175</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-xs">Compare to others:</span>
+                                <span class="text-xs text-gray-500">$225</span>
+                            </div>
+                            <div class="text-[10px] text-success">Save 22% compared to others</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse-content bg-base-200">
+                    <div class="flex flex-col gap-4 p-4">
+                        <h3 class="text-lg font-semibold">Next Available Appointments:</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="card bg-base-100 shadow-xl">
+                                <div class="card-body">
+                                    <h2 class="card-title">May 15, 2025</h2>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='9:00 AM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            9:00 AM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='10:30 AM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            10:30 AM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='2:00 PM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            2:00 PM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='3:30 PM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            3:30 PM
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-base-100 shadow-xl">
+                                <div class="card-body">
+                                    <h2 class="card-title">May 16, 2025</h2>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='1:00 PM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            1:00 PM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='2:30 PM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            2:30 PM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='4:00 PM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            4:00 PM
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-base-100 shadow-xl">
+                                <div class="card-body">
+                                    <h2 class="card-title">May 17, 2025</h2>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='9:00 AM'"
+                                            onclick="document.getElementById('booking-modal').showModal()"> 9:00 AM
+                                        </button>
+                                        <button class="btn btn-sm" onmouseover="this.textContent='Book Now'"
+                                            onmouseout="this.textContent='10:30 AM'"
+                                            onclick="document.getElementById('booking-modal').showModal()">
+                                            10:30 AM
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Continue pattern for remaining clinics -->
+
+        </div>
+    </section>
+    <footer class="bg-base-100 text-center p-4">
+        <p>&copy; 2025 Neptune</p>
+    </footer>
+</body>
+
+</html>
