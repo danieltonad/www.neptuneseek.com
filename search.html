@@ -35,11 +35,11 @@
                         </div>
                     </div>
 
-                    <div class="form-control">
+                    <div id="price-comparison" class="form-control hidden">
                         <label class="label">
                             <span class="label-text">Price Comparison</span>
                         </label>
-                        <div id="price-comparison" class="grid grid-cols-2 gap-4 hidden">
+                        <div class="grid grid-cols-2 gap-4 ">
                             <div>
                                 <label class="label">
                                     <span class="label-text">Quoted Price ($)</span>
@@ -61,7 +61,7 @@
                         document.querySelectorAll('input[name="price-respected"]').forEach(radio => {
                             radio.addEventListener('change', function () {
                                 const priceComparison = document.getElementById('price-comparison');
-                                if (this.value === 'yes') {
+                                if (this.value === 'no') {
                                     priceComparison.classList.remove('hidden');
                                 } else {
                                     priceComparison.classList.add('hidden');
