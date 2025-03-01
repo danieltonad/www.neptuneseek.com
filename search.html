@@ -44,15 +44,17 @@
 
                     <div id="price-comparison" class="form-control hidden">
                         <label class="label">
-                            <span class="label-text">Price Comparison</span>
+                            <span class="label-text">Price Difference</span>
                         </label>
                         <div class="grid grid-cols-2 gap-4 ">
                             <div>
                                 <label class="label">
                                     <span class="label-text">Quoted Price ($)</span>
                                 </label>
-                                <input type="number" placeholder="0.00" class="input input-bordered w-full" min="0"
-                                    step="0.01" />
+                                <div class="relative">
+                                    <input type="number" placeholder="0.00" class="input input-bordered w-full" min="0"
+                                        step="0.01" />
+                                </div>
                             </div>
                             <div>
                                 <label class="label">
@@ -62,6 +64,9 @@
                                     step="0.01" />
                             </div>
                         </div>
+                    </div>
+                    <div class="flex justify-center mt-6">
+                        <button type="submit" class="btn btn-primary">Submit Review</button>
                     </div>
 
                     <script>
