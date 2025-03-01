@@ -13,16 +13,28 @@
 </head>
 
 <body>
-    <dialog id="booking-modal" class="modal">
+    <dialog open id="review-modal" class="modal">
         <div class="modal-box w-11/12 max-w-xl">
             <form method="dialog">
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            <div class="p-4 space-y-4">
+                <h2 class="text-xl font-bold">Review This Clinic</h2>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Did this clinic respect the quoted price?</span>
+                    </label>
+                    <div class="flex items-center gap-4">
+                        <label class="label cursor-pointer">
+                            <input type="radio" name="price-respected" class="radio radio-primary" value="yes" />
+                            <span class="ml-2">Yes</span>
+                        </label>
+                        <label class="label cursor-pointer">
+                            <input type="radio" name="price-respected" class="radio radio-primary" value="no" />
+                            <span class="ml-2">No</span>
+                        </label>
+                    </div>
+                </div>
             </form>
-            <div class="flex justify-center">
-                <stripe-buy-button buy-button-id="buy_btn_1QtTM0FQ5W50JqjkCPnGTjGm"
-                    publishable-key="pk_test_51QtO37FQ5W50JqjkStkvFd98bgUHWGdIfrHP5sM3vELeoEgEW37MHs3z29y00ybSL27jL6H4m4k9RhSaiU4GK7yV003VEHD84n">
-                </stripe-buy-button>
-            </div>
         </div>
     </dialog>
 
@@ -85,6 +97,13 @@
         <div class="container mx-auto p-4 my-8">
             <div class="overflow-x-auto">
                 <table class="table w-full">
+                    <colgroup>
+                        <col style="width: 15%;">
+                        <col style="width: 40%;">
+                        <col style="width: 15%;">
+                        <col style="width: 15%;">
+                        <col style="width: 15%;">
+                    </colgroup>
                     <thead>
                         <tr>
                             <th>Rating</th>
@@ -103,7 +122,7 @@
                                 </p>
                             </td>
                             <td>
-                                <div class="flex items-center gap-8">
+                                <div class="flex items-center justify-between">
                                     <img src="./alpine_ah_logo.png" alt="Alpine Animal Hospital Logo"
                                         class="w-10 h-10 rounded-full">
                                     <div>
@@ -178,7 +197,7 @@
                                 </p>
                             </td>
                             <td>
-                                <div class="flex items-center gap-8">
+                                <div class="flex items-center justify-between">
                                     <img src="./west_william_hospital_logo.png" alt="West William Hospital Logo"
                                         class="w-10 h-10 rounded-full">
                                     <div>
@@ -250,7 +269,7 @@
                                 </p>
                             </td>
                             <td>
-                                <div class="flex items-center gap-8">
+                                <div class="flex items-center justify-between">
                                     <img src="https://dummyimage.com/40x40&text=DAC" alt="Downtown Animal Clinic Logo"
                                         class="w-10 h-10 rounded-full">
                                     <div>
@@ -322,7 +341,7 @@
                                 </p>
                             </td>
                             <td>
-                                <div class="flex items-center gap-8">
+                                <div class="flex items-center justify-between">
                                     <img src="https://dummyimage.com/40x40&text=EVC" alt="Eastside Veterinary Care Logo"
                                         class="w-10 h-10 rounded-full">
                                     <div>
@@ -373,7 +392,7 @@
                                 </p>
                             </td>
                             <td>
-                                <div class="flex items-center gap-8">
+                                <div class="flex items-center justify-between">
                                     <img src="https://dummyimage.com/40x40&text=RCAH"
                                         alt="Rose City Animal Hospital Logo" class="w-10 h-10 rounded-full">
                                     <div>
