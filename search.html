@@ -17,22 +17,58 @@
         <div class="modal-box w-11/12 max-w-xl">
             <form method="dialog">
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-            <div class="p-4 space-y-4">
-                <h2 class="text-xl font-bold">Review This Clinic</h2>
-                <div class="form-control">
-                    <label class="label">
-                        <span class="label-text">Did this clinic respect the quoted price?</span>
-                    </label>
-                    <div class="flex items-center gap-4">
-                        <label class="label cursor-pointer">
-                            <input type="radio" name="price-respected" class="radio radio-primary" value="yes" />
-                            <span class="ml-2">Yes</span>
+                <div class="p-4 space-y-4">
+                    <h2 class="text-xl font-bold">Review This Clinic</h2>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Did the bill match the quote?</span>
                         </label>
-                        <label class="label cursor-pointer">
-                            <input type="radio" name="price-respected" class="radio radio-primary" value="no" />
-                            <span class="ml-2">No</span>
-                        </label>
+                        <div class="flex items-center gap-4">
+                            <label class="label cursor-pointer">
+                                <input type="radio" name="price-respected" class="radio radio-primary" value="yes" />
+                                <span class="ml-2">Yes</span>
+                            </label>
+                            <label class="label cursor-pointer">
+                                <input type="radio" name="price-respected" class="radio radio-primary" value="no" />
+                                <span class="ml-2">No</span>
+                            </label>
+                        </div>
                     </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Price Comparison</span>
+                        </label>
+                        <div id="price-comparison" class="grid grid-cols-2 gap-4 hidden">
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Quoted Price ($)</span>
+                                </label>
+                                <input type="number" placeholder="0.00" class="input input-bordered w-full" min="0"
+                                    step="0.01" />
+                            </div>
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Actual Billed Price ($)</span>
+                                </label>
+                                <input type="number" placeholder="0.00" class="input input-bordered w-full" min="0"
+                                    step="0.01" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        document.querySelectorAll('input[name="price-respected"]').forEach(radio => {
+                            radio.addEventListener('change', function () {
+                                const priceComparison = document.getElementById('price-comparison');
+                                if (this.value === 'yes') {
+                                    priceComparison.classList.remove('hidden');
+                                } else {
+                                    priceComparison.classList.add('hidden');
+                                }
+                            });
+                        });
+                    </script>
                 </div>
             </form>
         </div>
