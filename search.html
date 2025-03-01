@@ -131,9 +131,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="btn btn-sm btn-primary"
-                                        onclick="document.getElementById('booking-modal').showModal()">Review
-                                        Them
+                                    <button class="btn btn-sm border-primary text-primary relative overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                                        onclick="document.getElementById('booking-modal').showModal()">
+                                        <span class="relative z-10 transition-all duration-300 group-hover:text-white">
+                                            Review Them
+                                        </span>
+                                        <span class="absolute inset-0 bg-primary scale-0 group-hover:scale-100 transition-all duration-300 rounded origin-bottom"></span>
                                     </button>
                                 </div>
                             </td>
@@ -287,6 +290,7 @@
                                     <span>$530</span>
                                     <span class="text-xs mt-1 text-gray-500">
                                         75% Trident Prce &copy;
+                                    </span>
                                 </div>
                             </td>
                         </tr>
