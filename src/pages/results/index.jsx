@@ -2,7 +2,16 @@ import { Drawer } from "vaul";
 import SearchBox from "../../components/searchBox";
 import { useSearch } from "../../context/SearchContext";
 import "./results.scss";
-import { Bot, Clock, Copy, Download, Globe, MapPin, Star } from "lucide-react";
+import {
+  Bot,
+  Clock,
+  Copy,
+  Download,
+  Globe,
+  Headset,
+  MapPin,
+  Star,
+} from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export function Results() {
@@ -139,6 +148,17 @@ const ResponseCardLarge = ({ data }) => {
   const { name, neptune_score, description, phone, map, hours, review, image } =
     data || {};
 
+  const iconProps = {
+    size: 21,
+    strokeWidth: 1.7,
+  };
+
+  const handleOpenMap = () => {
+    if (map) {
+      window.open(map, "_blank");
+    }
+  };
+
   return (
     <div className="card large" style={{ "--i": neptune_score }}>
       <div className="card-header">
@@ -151,39 +171,33 @@ const ResponseCardLarge = ({ data }) => {
       <div className="card-details">
         {description && <p className="description">{description}</p>}
         {phone && (
-          <div className="phone">
-            <Bot size={16} strokeWidth={1.8} />
+          <div className="phone cluster">
+            <Headset {...iconProps} />
             <span>{phone}</span>
           </div>
         )}
-        {map && (
-          <div className="map">
-            <MapPin size={16} strokeWidth={1.8} />
-            <span>{map}</span>
-          </div>
-        )}
         {hours && (
-          <div className="hours">
-            <Clock size={16} strokeWidth={1.8} />
+          <div className="hours cluster">
+            <Clock {...iconProps} />
             <span>{hours}</span>
           </div>
         )}
       </div>
 
-      <div className="bottom">
-        {review && (
-          <div className="review">
-            <Star size={16} strokeWidth={1.8} />
-            <span>{review}</span>
-          </div>
-        )}
-        {image && (
-          <div className="image">
-            <img src={image} alt={name} />
-          </div>
-        )}
-      </div>
-      <Drawer.Close>Close</Drawer.Close>
+      {review && (
+        <div className="review cluster">
+          <Star {...iconProps} />
+          <span>{review}</span>
+        </div>
+      )}
+
+      {map && (
+        <button className="map cluster" onClick={handleOpenMap}>
+          <MapPin {...iconProps} size={20} />
+          <span>Open Map</span>
+        </button>
+      )}
+      {/* <Drawer.Close>Close</Drawer.Close> */}
     </div>
   );
 };
