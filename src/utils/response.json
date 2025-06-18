@@ -1,0 +1,55 @@
+{
+  "message": "Got you! here are 5 top rated locksmith in LA",
+  "results": [
+    {
+      "name": "Sausalito Locksmith Service",
+      "neptune_score": 79,
+      "description": "We are family owned and operated. Having been in business for over 20 years",
+      "phone": "(510) 223-1121",
+      "map": "open map",
+      "hours": "open Mon-Fri | 9am-10pm",
+      "review": "4.9 (180 review)",
+      "image": "img"
+    },
+    {
+      "name": "City Locksmith LA",
+      "neptune_score": 85,
+      "description": "Professional locksmith services in Los Angeles since 2001. Fast and reliable.",
+      "phone": "(310) 555-8976",
+      "map": "open map",
+      "hours": "open 24/7",
+      "review": "4.8 (215 reviews)",
+      "image": "img"
+    },
+    {
+      "name": "Express Locksmith Solutions",
+      "neptune_score": 82,
+      "description": "Emergency lockout services with 15-minute response time. Licensed and insured.",
+      "phone": "(213) 444-9023",
+      "map": "open map",
+      "hours": "open 24/7",
+      "review": "4.7 (190 reviews)",
+      "image": "img"
+    },
+    {
+      "name": "Hollywood Lock & Key",
+      "neptune_score": 77,
+      "description": "Full service residential and commercial locksmith serving the greater LA area.",
+      "phone": "(323) 789-1234",
+      "map": "open map",
+      "hours": "open Mon-Sat | 8am-9pm",
+      "review": "4.5 (163 reviews)",
+      "image": "img"
+    },
+    {
+      "name": "Downtown Security Solutions",
+      "neptune_score": 81,
+      "description": "Specializing in high-security locks and smart home security systems.",
+      "phone": "(213) 678-5432",
+      "map": "open map",
+      "hours": "open Mon-Sun | 7am-11pm",
+      "review": "4.6 (201 reviews)",
+      "image": "img"
+    }
+  ]
+}

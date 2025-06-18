@@ -1,4 +1,5 @@
 import axios from "axios";
+import dummyResp from "@/utils/response.json";
 
 // Base configuration for axios
 const api = axios.create({
@@ -36,6 +37,7 @@ export const post = async (endpoint, data) => {
 };
 
 export const sendMsg = async (message) => {
+  return dummyResp;
   try {
     return await post("/search", {
       prompt: message,

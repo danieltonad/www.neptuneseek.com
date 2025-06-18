@@ -28,7 +28,8 @@ const SearchBox = ({
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      submit();
+      e.preventDefault();
+      submit(e);
     }
   };
 

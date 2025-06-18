@@ -12,9 +12,7 @@ function App() {
   return (
     <>
       {isFixed && <Header title={config.name} />}
-      <div className="container">
-        {isFixed ? <Results /> : <Home />}
-      </div>
+      <div className="container">{isFixed ? <Results /> : <Home />}</div>
     </>
   );
 }

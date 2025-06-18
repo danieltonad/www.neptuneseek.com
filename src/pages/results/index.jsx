@@ -1,7 +1,8 @@
+import { Drawer } from "vaul";
 import SearchBox from "../../components/searchBox";
 import { useSearch } from "../../context/SearchContext";
 import "./results.scss";
-import { Bot, Copy, Download, Globe, MapPin, Star } from "lucide-react";
+import { Bot, Clock, Copy, Download, Globe, MapPin, Star } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export function Results() {
@@ -59,7 +60,9 @@ const SentMessage = ({ message }) => {
 const ReceivedMessage = ({ message, children }) => {
   return (
     <div className="message received">
-      <Bot size={22} />
+      <span>
+        <Bot size={23} strokeWidth={1.8} opacity={0.9} />
+      </span>
       {message && (
         <div className="text">
           <PromptResponse data={message.content} />
@@ -90,13 +93,13 @@ const Loading = () => {
 };
 
 const PromptResponse = ({ data }) => {
-  const { message, data: list } = data;
+  const { message, results } = data;
   return (
     <div className="response">
       {message && <p>{message}</p>}
-      {list && (
+      {results && (
         <div className="results">
-          {list.map((result, index) => (
+          {results.map((result, index) => (
             <ResponseCard key={index} data={result} />
           ))}
         </div>
@@ -110,52 +113,77 @@ const ResponseCard = ({ data }) => {
     data || {};
 
   return (
-    <div className="card" style={{ "--i": neptune_score }}>
+    <Drawer.Root>
+      <Drawer.Trigger asChild>
+        <button className="card mini" style={{ "--i": neptune_score }}>
+          <div className="card-header">
+            <h3 className="title">{name}</h3>
+            <div className="score">
+              <div className="neptune-score">{neptune_score}</div>
+            </div>
+          </div>
+        </button>
+      </Drawer.Trigger>
+      <Drawer.Portal>
+        <Drawer.Overlay className="drawer-overlay" />
+        <Drawer.Content className="drawer-content">
+          <Drawer.Handle />
+          <ResponseCardLarge data={data} />
+        </Drawer.Content>
+      </Drawer.Portal>
+    </Drawer.Root>
+  );
+};
+
+const ResponseCardLarge = ({ data }) => {
+  const { name, neptune_score, description, phone, map, hours, review, image } =
+    data || {};
+
+  return (
+    <div className="card large" style={{ "--i": neptune_score }}>
       <div className="card-header">
         <h3 className="title">{name}</h3>
-        {neptune_score && (
-          <div className="score">
-            <div className="neptune-score">{neptune_score}</div>
-          </div>
-        )}
+        <div className="score">
+          <div className="neptune-score">{neptune_score}</div>
+        </div>
       </div>
 
       <div className="card-details">
-        {price && <h3 className="price">{price}</h3>}
-        {address && (
-          <div className="address">
+        {description && <p className="description">{description}</p>}
+        {phone && (
+          <div className="phone">
+            <Bot size={16} strokeWidth={1.8} />
+            <span>{phone}</span>
+          </div>
+        )}
+        {map && (
+          <div className="map">
             <MapPin size={16} strokeWidth={1.8} />
-            <span>{address}</span>
+            <span>{map}</span>
+          </div>
+        )}
+        {hours && (
+          <div className="hours">
+            <Clock size={16} strokeWidth={1.8} />
+            <span>{hours}</span>
           </div>
         )}
       </div>
 
       <div className="bottom">
-        <div className="clusters">
-          {rating && (
-            <div className="rating cluster">
-              <Star size={16} strokeWidth={1.8} />
-              <span>{rating}</span>
-            </div>
-          )}
-          {source && (
-            <span className="source cluster">
-              <Globe size={16} strokeWidth={1.8} />
-              <span>{source}</span>
-            </span>
-          )}
-        </div>
-        {booking && (
-          <a
-            href={booking}
-            className="booking-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book Now
-          </a>
+        {review && (
+          <div className="review">
+            <Star size={16} strokeWidth={1.8} />
+            <span>{review}</span>
+          </div>
+        )}
+        {image && (
+          <div className="image">
+            <img src={image} alt={name} />
+          </div>
         )}
       </div>
+      <Drawer.Close>Close</Drawer.Close>
     </div>
   );
 };
