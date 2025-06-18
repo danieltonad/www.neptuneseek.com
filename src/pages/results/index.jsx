@@ -190,6 +190,12 @@ const ResponseCardLarge = ({ data }) => {
               <span>{review}</span>
             </div>
           )}
+          {/* {review && (
+            <div className="review cluster">
+              <Star {...iconProps} />
+              <span>{review}</span>
+            </div>
+          )} */}
         </div>
       </Drawer.Description>
 
