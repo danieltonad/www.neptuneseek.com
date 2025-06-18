@@ -6,12 +6,6 @@ export default function Header() {
         <div className="title">
             Neptune
         </div>
-
-        <nav>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-        </nav>
     </div>
   )
 }
