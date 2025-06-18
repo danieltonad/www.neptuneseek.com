@@ -161,35 +161,37 @@ const ResponseCardLarge = ({ data }) => {
 
   return (
     <div className="card large" style={{ "--i": neptune_score }}>
-      <div className="card-header">
-        <h3 className="title">{name}</h3>
-        <div className="score">
-          <div className="neptune-score">{neptune_score}</div>
-        </div>
-      </div>
-
-      <div className="card-details">
-        {description && <p className="description">{description}</p>}
-        {phone && (
-          <div className="phone cluster">
-            <Headset {...iconProps} />
-            <span>{phone}</span>
+      <Drawer.Title asChild>
+        <div className="card-header">
+          <h3 className="title">{name}</h3>
+          <div className="score">
+            <div className="neptune-score">{neptune_score}</div>
           </div>
-        )}
-        {hours && (
-          <div className="hours cluster">
-            <Clock {...iconProps} />
-            <span>{hours}</span>
-          </div>
-        )}
-      </div>
-
-      {review && (
-        <div className="review cluster">
-          <Star {...iconProps} />
-          <span>{review}</span>
         </div>
-      )}
+      </Drawer.Title>
+      <Drawer.Description asChild>
+        <div className="card-details">
+          {description && <p className="description">{description}</p>}
+          {phone && (
+            <div className="phone cluster">
+              <Headset {...iconProps} />
+              <span>{phone}</span>
+            </div>
+          )}
+          {hours && (
+            <div className="hours cluster">
+              <Clock {...iconProps} />
+              <span>{hours}</span>
+            </div>
+          )}
+          {review && (
+            <div className="review cluster">
+              <Star {...iconProps} />
+              <span>{review}</span>
+            </div>
+          )}
+        </div>
+      </Drawer.Description>
 
       {map && (
         <button className="map cluster" onClick={handleOpenMap}>
