@@ -1,0 +1,90 @@
+@use "@/utils/mixin" as *;
+
+:root {
+  --mw: clamp(0px, 740px, 100vw);
+  --mask-gradient: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10px,
+    black calc(100% - 10px),
+    transparent 100%
+  );
+}
+
+.home {
+  & {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    max-width: calc(var(--mw) + 48px);
+    justify-content: center;
+    align-content: center;
+  }
+
+  h1 {
+    box-sizing: border-box;
+    font-size: clamp(25px, 4vw, 40px);
+    font-weight: 550;
+    line-height: 1.4;
+    margin: 10px 0;
+    padding: 0 24px;
+    word-spacing: -1px;
+    letter-spacing: -1px;
+  }
+  .logo {
+    align-self: center;
+    margin-bottom: 10px;
+  }
+}
+.suggestions {
+  justify-self: center;
+  padding: 8px 5%;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media screen and (max-width: 500px) {
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--text), 0.15) transparent;
+    mask-image: var(--mask-gradient);
+    -webkit-mask-image: var(--mask-gradient);
+  }
+
+  &-list {
+    & {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 500px) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: fit-content;
+    }
+
+    .suggestion {
+      @include resetDefault();
+      @include pressFeedback(0.98);
+      @include borderFade();
+      @include hoverBg($transition-duration: 0.15s);
+      @include slightFadeBg($opacity: 0.8);
+      & {
+        border-radius: 10rem;
+        padding: 10px 16px;
+        font-size: 12px;
+        font-weight: 400;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+        white-space: nowrap;
+      }
+    }
+  }
+}

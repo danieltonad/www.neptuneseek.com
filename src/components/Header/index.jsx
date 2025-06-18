@@ -1,11 +1,18 @@
+import React from "react";
 import "./header.scss";
+import Logo from "../ui/Logo";
 
-export default function Header() {
+const Header = ({ title = "Neptune", isFixed }) => {
   return (
-    <div className="neptune-header">
-        <div className="title">
-            Neptune
-        </div>
-    </div>
-  )
-}
+    <header className={`header ${isFixed ? "fixed" : ""}`}>
+      <div className="header-container">
+        <h1>
+          <Logo size="small" />
+          {title}
+        </h1>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
