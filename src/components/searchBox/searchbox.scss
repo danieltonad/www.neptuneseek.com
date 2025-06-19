@@ -1,0 +1,129 @@
+@use "@/utils/mixin" as *;
+
+form {
+  display: grid;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100vw;
+  padding: var(--pad) clamp(var(--pad), 2.5vw, 24px) !important;
+  box-sizing: border-box;
+
+  .search-box {
+    & {
+      max-width: var(--mw);
+      justify-self: center;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 6px;
+      // margin: 8px 0;
+      padding: 6px;
+      width: 94%;
+      box-sizing: border-box;
+      border-radius: 12px;
+    }
+    @include bgFade();
+    @include borderFade();
+    & {
+      transition-property: border-color, background-color;
+    }
+
+    &:focus-within {
+      @include borderFade(rgb(var(--text), 0.18));
+    }
+
+    .search-area {
+      @include resetDefault();
+      & {
+        width: 100%;
+        padding: 6px 6px 3px;
+        box-sizing: border-box;
+        resize: none;
+        outline: none;
+        font-size: 14px;
+        font-weight: 420;
+        min-height: 32px;
+        max-height: 254px;
+        overflow-y: auto;
+        scrollbar-color: rgb(var(--text), 0.2) transparent;
+        scrollbar-width: thin;
+        line-height: 21px;
+        transition: 0.2s ease-in-out scrollbar-color;
+        field-sizing: content;
+
+        &:hover {
+          scrollbar-color: rgb(var(--text), 0.3) transparent;
+        }
+      }
+
+      &::placeholder {
+        color: rgb(var(--text), 0.6);
+      }
+    }
+
+    .search-button {
+      border-radius: 6px;
+      @include slightFadeBg();
+      & {
+        aspect-ratio: 1;
+        width: 32px;
+        padding: 0;
+        transition: 0.1s ease-in-out background-color;
+      }
+      svg {
+        opacity: 0.5;
+      }
+
+      &:not(:disabled) {
+        background-color: rgb(var(--text));
+        color: rgb(var(--bg));
+        svg {
+          opacity: 1;
+        }
+
+        &:hover,
+        &:focus-visible {
+          background-color: rgb(var(--text), 0.85);
+        }
+      }
+    }
+    .bottom {
+      & {
+        padding: 12px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+      }
+      .options {
+        display: flex;
+        gap: 12px;
+        button {
+          & {
+            text-transform: capitalize;
+            transition-duration: 50ms;
+            border-radius: 6px;
+
+            svg {
+              margin-right: 4px;
+            }
+          }
+          &.active {
+            color: rgb(var(--primary));
+            border-color: rgb(var(--primary), 0.12);
+            @include slightFadeBg(rgb(var(--primary), 0.1));
+          }
+        }
+      }
+    }
+  }
+
+  .notice {
+    width: 100%;
+    text-align: center;
+    font-size: clamp(11px, 1vw, 12px);
+    font-weight: 400;
+    color: rgb(var(--text), 0.6);
+  }
+}

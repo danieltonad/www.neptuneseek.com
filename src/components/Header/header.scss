@@ -1,0 +1,47 @@
+@use "@/utils/mixin" as *;
+
+.header {
+  position: fixed;
+  top: -1px;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(var(--bg), 0.85);
+  backdrop-filter: blur(20px);
+  height: 60px;
+  padding: 0 20px 1px 4px;
+  box-sizing: border-box;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: var(--mw);
+
+    h1 {
+      font-size: clamp(21px, 4vw, 23px);
+      letter-spacing: -0.8px;
+      font-weight: 550;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        @include slightFadeBg(currentcolor, 0.1);
+        & {
+          color: rgb(var(--success));
+          font-size: 12.5px;
+          letter-spacing: 0px;
+          font-weight: 400;
+          padding: 2px 5px;
+          border-radius: 4px;
+          -webkit-font-smoothing: antialiased;
+          user-select: none;
+        }
+      }
+    }
+  }
+}

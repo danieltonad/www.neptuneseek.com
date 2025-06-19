@@ -1,0 +1,88 @@
+@use "@/utils/mixin" as *;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Geist:wght@100..900&display=swap");
+
+:root {
+  --bg: 15, 15, 16;
+  --fg: 28, 28, 30;
+  --text: 255, 255, 255;
+  --text-fade: 100, 100, 100;
+  --bg-fade: 20, 20, 21;
+  --primary: 120, 230, 225;
+  --primary-dark: 9, 112, 139;
+  --success: 0, 255, 0;
+  --error: 255, 0, 0;
+
+  color-scheme: dark dark;
+}
+
+html,
+body {
+  margin: 0;
+  background-color: rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: "Geist", serif;
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
+
+#root {
+  display: grid;
+  width: 100%;
+  min-height: 100dvh;
+
+  > .container {
+    & {
+      display: flex;
+      justify-content: center;
+      padding: 62px 0;
+      box-sizing: border-box;
+      height: 100dvh;
+      overflow: hidden;
+    }
+
+    > * {
+      justify-self: center;
+      width: 100%;
+    }
+
+    &:has(.messages) {
+      padding-bottom: 0;
+    }
+  }
+
+  *::selection {
+    background-color: rgba(var(--primary), 0.15);
+    color: rgb(var(--primary));
+  }
+}
+
+.button {
+  @include resetDefault();
+  @include borderFade(rgb(var(--text), 0.15));
+  & {
+    border-radius: 8px;
+    height: 32px;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 450;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:not(:disabled) {
+    @include hover();
+    @include pressFeedback(0.98);
+    & {
+      cursor: pointer;
+    }
+  }
+}
+
+button {
+  &:focus-visible {
+    outline: 2px solid Highlight;
+    border-color: rgb(var(--bg));
+  }
+}

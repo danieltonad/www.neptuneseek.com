@@ -1,0 +1,157 @@
+$slight-fade-bgcolor: rgba(var(--text), 0.03);
+
+@mixin hover($bgcolor: $slight-fade-bgcolor) {
+  &:before {
+    content: "";
+    transition: 0.2s ease-in;
+    border-radius: inherit;
+  }
+
+  &:hover {
+    @include slightFadeBg($bgcolor);
+  }
+}
+
+@mixin lightenScrollBarOnHover(
+  $color: var(--text),
+  $opacity: 0.1,
+  $hover-opacity: 0.2
+) {
+  & {
+    scrollbar-color: rgb($color, $opacity) transparent;
+    scrollbar-width: thin;
+    transition: 0.1s ease-in-out;
+  }
+  &:hover {
+    scrollbar-color: rgb($color, $hover-opacity) transparent;
+  }
+}
+
+@mixin hoverBg($bgcolor: $slight-fade-bgcolor, $transition-duration: 0s) {
+  & {
+    transition: $transition-duration ease-out background-color;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: $bgcolor !important;
+  }
+}
+
+@mixin slightFadeBg($bgcolor: $slight-fade-bgcolor, $opacity: 1) {
+  & {
+    position: relative;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bgcolor;
+    z-index: -1;
+    scale: 1;
+    transition: 0.2s ease-in-out;
+    opacity: $opacity;
+  }
+}
+
+@mixin hoverInnerOpacity($color: rgb(var(--text-color))) {
+  & {
+    > * {
+      transition: 0.1s ease-in-out;
+    }
+    &:hover {
+      > * {
+        opacity: 1 !important;
+      }
+    }
+  }
+}
+
+@mixin pressFeedback($scale: 0.95) {
+  & {
+    transition: 0.18s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.03s scale;
+    transform-origin: center;
+    will-change: scale;
+  }
+  &:active {
+    scale: $scale;
+  }
+}
+
+@mixin hideBefore() {
+  &:before {
+    display: none;
+  }
+}
+
+@mixin hideSlightFadeBg() {
+  &::before {
+    background-color: transparent;
+  }
+}
+
+@mixin resetDefault() {
+  & {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
+}
+
+@mixin borderFade($color: rgb(var(--text), 0.12)) {
+  & {
+    border: 1px solid $color;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@mixin bgFade($color: rgb(var(--bg-fade))) {
+  & {
+    background-color: $color;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+@mixin hoverOpacity($opacity: 0.9, $transition-duration: 0.2s) {
+  & {
+    transition: opacity $transition-duration ease-in-out;
+  }
+  &:hover {
+    opacity: $opacity;
+  }
+}
+
+@mixin hideScroll() {
+  & {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin overlay($opacity: 0.5) {
+  & {
+    position: relative;
+    overflow: hidden;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, $opacity);
+    z-index: 1;
+  }
+}
