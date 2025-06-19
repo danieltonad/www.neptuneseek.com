@@ -1,5 +1,5 @@
 import "./App.scss";
-import Header from "./components/header";
+import Header from "./components/Header";
 import { useSearch } from "./context/SearchContext";
 import { Home } from "./pages/home";
 import { Results } from "./pages/results";
