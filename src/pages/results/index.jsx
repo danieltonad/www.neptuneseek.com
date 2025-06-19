@@ -8,6 +8,7 @@ import {
   Copy,
   Download,
   Globe,
+  Home,
   Headset,
   MapPin,
   Star,
@@ -145,7 +146,7 @@ const ResponseCard = ({ data }) => {
 };
 
 const ResponseCardLarge = ({ data }) => {
-  const { name, neptune_score, description, phone, map, hours, review, image } =
+  const { name, neptune_score, description, phone, map, address, review, image } =
     data || {};
 
   const iconProps = {
@@ -178,10 +179,10 @@ const ResponseCardLarge = ({ data }) => {
               <span>{phone}</span>
             </div>
           )}
-          {hours && (
-            <div className="hours cluster">
-              <Clock {...iconProps} />
-              <span>{hours}</span>
+          {address && (
+            <div className="address cluster">
+              <Home {...iconProps} />
+              <span>{address}</span>
             </div>
           )}
           {review && (
@@ -190,12 +191,6 @@ const ResponseCardLarge = ({ data }) => {
               <span>{review}</span>
             </div>
           )}
-          {/* {review && (
-            <div className="review cluster">
-              <Star {...iconProps} />
-              <span>{review}</span>
-            </div>
-          )} */}
         </div>
       </Drawer.Description>
 
