@@ -3,7 +3,7 @@
   "results": [
     {
       "name": "Sausalito Locksmith Service",
-      "neptune_score": 79,
+      "neptune_score": 93,
       "description": "We are family owned and operated. Having been in business for over 20 years",
       "phone": "(510) 223-1121",
       "map": "https://maps.google.com",
@@ -18,7 +18,7 @@
       "phone": "(310) 555-8976",
       "map": "https://maps.google.com",
       "address": "open 24/7",
-      "review": "4.8 (215 reviews)",
+      "review": "4.6 (135 reviews)",
       "image": "img"
     },
     {
@@ -28,7 +28,7 @@
       "phone": "(213) 444-9023",
       "map": "https://maps.google.com",
       "address": "34A Sunset Blvd, Los Angeles, CA 90028",
-      "review": "4.7 (190 reviews)",
+      "review": "4.4 (90 reviews)",
       "image": "img"
     },
     {
@@ -38,17 +38,17 @@
       "phone": "(323) 789-1234",
       "map": "https://maps.google.com",
       "address": "Block 5, Hollywood Blvd, Los Angeles, CA 90028",
-      "review": "4.5 (163 reviews)",
+      "review": "4.1 (73 reviews)",
       "image": "img"
     },
     {
       "name": "Downtown Security Solutions",
-      "neptune_score": 81,
+      "neptune_score": 51,
       "description": "Specializing in high-security locks and smart home security systems.",
       "phone": "(213) 678-5432",
       "map": "https://maps.google.com",
       "address": "34, Main St, Los Angeles, CA 90012",
-      "review": "4.6 (201 reviews)",
+      "review": "3.8 (11 reviews)",
       "image": "img"
     }
   ]
