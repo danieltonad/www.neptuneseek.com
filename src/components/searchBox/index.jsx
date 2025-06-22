@@ -63,7 +63,7 @@ const SearchBox = ({
       </label>
       {notice && (
         <div className="notice">
-          {`${config.name} can make mistakes. Check important info.`}
+          {`${config.name} uses proprietary data sets. Check important info.`}
         </div>
       )}
     </form>

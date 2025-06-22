@@ -37,10 +37,10 @@ export const post = async (endpoint, data) => {
 };
 
 export const sendMsg = async (message) => {
-  return dummyResp;
+  // return dummyResp;
   try {
     return await post("/search", {
-      prompt: message,
+      search: message,
     });
   } catch (error) {
     console.error("Error sending message:", error);
