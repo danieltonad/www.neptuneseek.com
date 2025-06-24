@@ -12,6 +12,7 @@ import {
   Headset,
   MapPin,
   Star,
+  ChevronRight,
 } from "lucide-react";
 import { useEffect, useRef } from "react";
 
@@ -127,10 +128,11 @@ const ResponseCard = ({ data }) => {
       <Drawer.Trigger asChild>
         <button className="card mini" style={{ "--i": neptune_score }}>
           <div className="card-header">
-            <h3 className="title">{name}</h3>
             <div className="score">
               <div className="neptune-score">{neptune_score}</div>
             </div>
+            <h3 className="title">{name}</h3>
+            <ChevronRight />
           </div>
         </button>
       </Drawer.Trigger>
@@ -146,8 +148,16 @@ const ResponseCard = ({ data }) => {
 };
 
 const ResponseCardLarge = ({ data }) => {
-  const { name, neptune_score, description, phone, map, address, review, image } =
-    data || {};
+  const {
+    name,
+    neptune_score,
+    description,
+    phone,
+    map,
+    address,
+    review,
+    image,
+  } = data || {};
 
   const iconProps = {
     size: 21,
@@ -172,6 +182,12 @@ const ResponseCardLarge = ({ data }) => {
       </Drawer.Title>
       <Drawer.Description asChild>
         <div className="card-details">
+          <iframe
+            src="https://maps.google.com/maps?q=6926+Main+St,+New+York,+NY&output=embed"
+            allowFullScreen
+            loading="lazy"
+          />
+
           {description && <p className="description">{description}</p>}
           {phone && (
             <div className="phone cluster">
