@@ -15,6 +15,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { BadgeIcon } from "../../components/ui/Icon";
 
 export function Results() {
   return (
@@ -127,7 +128,7 @@ const ResponseCard = ({ data }) => {
     <Drawer.Root>
       <Drawer.Trigger asChild>
         <button className="card mini" style={{ "--i": neptune_score }}>
-          <div className="card-header">
+          <div className="card-header mini">
             <div className="score">
               <div className="neptune-score">{neptune_score}</div>
             </div>
@@ -157,6 +158,7 @@ const ResponseCardLarge = ({ data }) => {
     address,
     review,
     image,
+    score_description,
   } = data || {};
 
   const iconProps = {
@@ -175,9 +177,23 @@ const ResponseCardLarge = ({ data }) => {
       <Drawer.Title asChild>
         <div className="card-header">
           <h3 className="title">{name}</h3>
-          <div className="score">
-            <div className="neptune-score">{neptune_score}</div>
-          </div>
+          <Drawer.NestedRoot>
+            <Drawer.Trigger asChild>
+              <div className="score">
+                <div className="neptune-score">{neptune_score}</div>
+              </div>
+            </Drawer.Trigger>
+            <Drawer.Portal>
+              <Drawer.Overlay className="drawer-overlay drawer-step" />
+              <Drawer.Content className="drawer-content drawer-step">
+                <Drawer.Handle />
+                <NeptuneScoreDescription
+                  score={neptune_score}
+                  description={score_description}
+                />
+              </Drawer.Content>
+            </Drawer.Portal>
+          </Drawer.NestedRoot>
         </div>
       </Drawer.Title>
       <Drawer.Description asChild>
@@ -217,6 +233,21 @@ const ResponseCardLarge = ({ data }) => {
         </button>
       )}
       {/* <Drawer.Close>Close</Drawer.Close> */}
+    </div>
+  );
+};
+
+const NeptuneScoreDescription = ({ score, description }) => {
+  return (
+    <div className="card large description" style={{ "--i": score / 100 }}>
+      <Drawer.Title asChild>
+        <div className="card-header">
+          <h3>Neptune Score</h3>
+
+          <BadgeIcon />
+        </div>
+      </Drawer.Title>
+      <p>{description}</p>
     </div>
   );
 };

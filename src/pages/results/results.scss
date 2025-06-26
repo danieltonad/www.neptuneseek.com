@@ -144,6 +144,17 @@
   }
 
   &.mini {
+    svg {
+      opacity: 0.5;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        opacity: 0.9;
+      }
+    }
+
     @include pressFeedback(0.99);
     @include slightFadeBg($opacity: 0.5);
   }
@@ -175,19 +186,7 @@
       border: 2px solid
         oklch(calc(0.8 - var(--i) * 0.002) 0.25 calc(30 + var(--i) * 1.2));
     }
-
-    svg {
-      opacity: 0.5;
-      transition: opacity 0.2s ease-in-out;
-    }
-
-    &:hover {
-      svg {
-        opacity: 0.9;
-      }
-    }
   }
-
   &.large {
     & {
       border: none;
@@ -252,6 +251,20 @@
       @include borderFade();
     }
   }
+
+  &.description {
+    svg {
+      --hue: calc(20 + var(--i) * 70); /* 20 → 90 */
+      --lightness: calc(55% + var(--i) * 29%); /* 55 → 84 */
+      --chroma: calc(0.1 + var(--i) * 0.14); /* 0.10 → 0.24 */
+
+      path {
+        fill: oklch(var(--lightness) var(--chroma) var(--hue));
+      }
+    }
+    p {
+    }
+  }
 }
 
 .drawer {
@@ -264,7 +277,7 @@
     right: 0;
     outline: none;
     border-radius: 24px 24px 0 0;
-    z-index: 1000;
+    z-index: 101;
     padding: 16px 8px;
     box-sizing: border-box;
     width: 100%;
@@ -276,6 +289,12 @@
     inset: 0;
     z-index: 100;
     background-color: rgba(0, 0, 0, 0.5);
+  }
+  &-step {
+    z-index: 102;
+  }
+  &-step-3 {
+    z-index: 103;
   }
   &-handle {
     display: flex;
