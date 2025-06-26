@@ -9,6 +9,7 @@
       "map": "https://maps.google.com",
       "address": "123, Main St, Sausalito, CA 94965",
       "review": "4.9 (180 review)",
+      "pricing": "$50 - $150",
       "score_description": "This provider gets a Neptune score of 100, awarded as follows: 70 points for having a 4.7 star rating on major platforms, 35 points based on 279 customer reviews, and 25 points for offering online with Apple Pay booking. This makes them one of the top-rated providers in the Los Angeles area."
     },
     {
@@ -18,6 +19,7 @@
       "phone": "(310) 555-8976",
       "map": "https://maps.google.com",
       "address": "open 24/7",
+      "pricing": "$50 - $150",
       "review": "4.6 (135 reviews)",
       "score_description": "This provider gets a Neptune score of 100, awarded as follows: 70 points for having a 4.7 star rating on major platforms, 35 points based on 279 customer reviews, and 25 points for offering online with Apple Pay booking. This makes them one of the top-rated providers in the Los Angeles area."
     },
@@ -29,6 +31,7 @@
       "map": "https://maps.google.com",
       "address": "34A Sunset Blvd, Los Angeles, CA 90028",
       "review": "4.4 (90 reviews)",
+      "pricing": "$50 - $150",
       "score_description": "This provider gets a Neptune score of 100, awarded as follows: 70 points for having a 4.7 star rating on major platforms, 35 points based on 279 customer reviews, and 25 points for offering online with Apple Pay booking. This makes them one of the top-rated providers in the Los Angeles area."
     },
     {
@@ -39,6 +42,7 @@
       "map": "https://maps.google.com",
       "address": "Block 5, Hollywood Blvd, Los Angeles, CA 90028",
       "review": "4.1 (73 reviews)",
+      "pricing": "$50 - $150",
       "score_description": "This provider gets a Neptune score of 100, awarded as follows: 70 points for having a 4.7 star rating on major platforms, 35 points based on 279 customer reviews, and 25 points for offering online with Apple Pay booking. This makes them one of the top-rated providers in the Los Angeles area."
     },
     {
@@ -49,6 +53,7 @@
       "map": "https://maps.google.com",
       "address": "34, Main St, Los Angeles, CA 90012",
       "review": "3.8 (11 reviews)",
+      "pricing": "$50 - $150",
       "score_description": "This provider gets a Neptune score of 100, awarded as follows: 70 points for having a 4.7 star rating on major platforms, 35 points based on 279 customer reviews, and 25 points for offering online with Apple Pay booking. This makes them one of the top-rated providers in the Los Angeles area."
     }
   ]
