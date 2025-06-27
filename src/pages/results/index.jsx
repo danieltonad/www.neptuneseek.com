@@ -4,7 +4,7 @@ import { useSearch } from "../../context/SearchContext";
 import "./results.scss";
 import {
   Bot,
-  Scale,
+  Tag,
   Home,
   Headset,
   MapPin,
@@ -205,7 +205,7 @@ const ResponseCardLarge = ({ data }) => {
           {description && <p className="description">{description}</p>}
           {pricing && (
             <div className="pricing cluster">
-              <Scale {...iconProps} />
+              <Tag {...iconProps} />
               <span>{pricing}</span>
             </div>
           )}
