@@ -4,15 +4,13 @@ import { useSearch } from "../../context/SearchContext";
 import "./results.scss";
 import {
   Bot,
-  Clock,
-  Copy,
-  Download,
-  Globe,
+  Tag,
   Home,
   Headset,
   MapPin,
   Star,
   ChevronRight,
+  CreditCard,
 } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { BadgeIcon } from "../../components/ui/Icon";
@@ -157,7 +155,7 @@ const ResponseCardLarge = ({ data }) => {
     map,
     address,
     review,
-    image,
+    pricing,
     score_description,
   } = data || {};
 
@@ -205,6 +203,12 @@ const ResponseCardLarge = ({ data }) => {
           />
 
           {description && <p className="description">{description}</p>}
+          {pricing && (
+            <div className="pricing cluster">
+              <Tag {...iconProps} />
+              <span>{pricing}</span>
+            </div>
+          )}
           {phone && (
             <div className="phone cluster">
               <Headset {...iconProps} />
@@ -228,8 +232,8 @@ const ResponseCardLarge = ({ data }) => {
 
       {map && (
         <button className="map cluster" onClick={handleOpenMap}>
-          <MapPin {...iconProps} size={20} />
-          <span>Open Map</span>
+          <CreditCard {...iconProps} size={22} strokeWidth={1.65} />
+          <span>Book Now</span>
         </button>
       )}
       {/* <Drawer.Close>Close</Drawer.Close> */}

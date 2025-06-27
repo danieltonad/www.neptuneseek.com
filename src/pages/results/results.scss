@@ -185,6 +185,11 @@
       font-size: 13px;
       border: 2px solid
         oklch(calc(0.8 - var(--i) * 0.002) 0.25 calc(30 + var(--i) * 1.2));
+
+        &:hover {
+          background-color: rgb(var(--text), 0.05);
+          cursor: pointer;
+        }
     }
   }
   &.large {
