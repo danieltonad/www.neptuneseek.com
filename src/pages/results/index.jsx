@@ -4,10 +4,7 @@ import { useSearch } from "../../context/SearchContext";
 import "./results.scss";
 import {
   Bot,
-  Clock,
-  Copy,
-  Download,
-  Globe,
+  Scale,
   Home,
   Headset,
   MapPin,
@@ -158,7 +155,7 @@ const ResponseCardLarge = ({ data }) => {
     map,
     address,
     review,
-    image,
+    pricing,
     score_description,
   } = data || {};
 
@@ -206,6 +203,12 @@ const ResponseCardLarge = ({ data }) => {
           />
 
           {description && <p className="description">{description}</p>}
+          {pricing && (
+            <div className="pricing cluster">
+              <Scale {...iconProps} />
+              <span>{pricing}</span>
+            </div>
+          )}
           {phone && (
             <div className="phone cluster">
               <Headset {...iconProps} />

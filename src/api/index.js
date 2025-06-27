@@ -37,7 +37,7 @@ export const post = async (endpoint, data) => {
 };
 
 export const sendMsg = async (message) => {
-  // return dummyResp;
+  return dummyResp;
   try {
     return await post("/search", {
       search: message,
