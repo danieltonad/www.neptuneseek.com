@@ -119,18 +119,20 @@ const PromptResponse = ({ data }) => {
 };
 
 const ResponseCard = ({ data }) => {
-  const { name, rating, price, address, booking, neptune_score, source } =
-    data || {};
+  const { name, score_description, neptune_score } = data || {};
 
   return (
     <Drawer.Root>
       <Drawer.Trigger asChild>
         <button className="card mini" style={{ "--i": neptune_score }}>
-          <div className="card-header mini">
+          <div className="card-header">
             <div className="score">
               <div className="neptune-score">{neptune_score}</div>
             </div>
-            <h3 className="title">{name}</h3>
+            <div className="details">
+              <h3 className="title">{name}</h3>
+              <p className="description">{score_description}</p>
+            </div>
             <ChevronRight />
           </div>
         </button>
