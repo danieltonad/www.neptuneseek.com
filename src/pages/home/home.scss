@@ -22,13 +22,13 @@
     align-content: center;
   }
 
-  .motto{
-    margin: 0 0 78px 0;
-    padding: 0;
+  .motto {
+    margin: 4px 0;
     p {
       margin: 0;
-      padding: 0;
-      line-height: clamp(12px, 3vw, 20px);
+      line-height: 21px;
+      font-size: 14px;
+      opacity: 0.6;
     }
   }
 
