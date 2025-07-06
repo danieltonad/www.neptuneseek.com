@@ -22,6 +22,16 @@
     align-content: center;
   }
 
+  .motto{
+    margin: 0 0 78px 0;
+    padding: 0;
+    p {
+      margin: 0;
+      padding: 0;
+      line-height: clamp(12px, 3vw, 20px);
+    }
+  }
+
   h1 {
     box-sizing: border-box;
     font-size: clamp(25px, 4vw, 40px);
