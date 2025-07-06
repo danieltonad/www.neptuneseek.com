@@ -10,9 +10,7 @@ export function Home() {
       <Logo />
       <div className="motto">
         <p>Trust deeper. Book smarter.</p>
-        <p>Save 90 minutes in 90 seconds.</p>
       </div>
-
       <h1>What service do you need?</h1>
       <SearchBox />
       <Suggestions />

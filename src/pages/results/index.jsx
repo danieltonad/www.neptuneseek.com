@@ -219,7 +219,7 @@ const ResponseCardLarge = ({ data }) => {
           )}
           {address && (
             <div className="address cluster">
-              <Home {...iconProps} />
+              <MapPin {...iconProps} />
               <span>{address}</span>
             </div>
           )}
