@@ -13,7 +13,7 @@ import {
   CreditCard,
 } from "lucide-react";
 import { useEffect, useRef } from "react";
-import { BadgeIcon } from "../../components/ui/Icon";
+import { BadgeIcon, TridentIcon } from "../../components/ui/Icon";
 
 export function Results() {
   return (
@@ -110,7 +110,7 @@ const PromptResponse = ({ data }) => {
       {results && (
         <div className="results">
           {results.map((result, index) => (
-            <ResponseCard key={index} data={result} />
+            <ResponseCard key={index} index={index} data={result} />
           ))}
         </div>
       )}
@@ -118,7 +118,7 @@ const PromptResponse = ({ data }) => {
   );
 };
 
-const ResponseCard = ({ data }) => {
+const ResponseCard = ({ index, data }) => {
   const { name, score_description, neptune_score } = data || {};
 
   return (
@@ -126,14 +126,19 @@ const ResponseCard = ({ data }) => {
       <Drawer.Trigger asChild>
         <button className="card mini" style={{ "--i": neptune_score }}>
           <div className="card-header">
-            <div className="score">
-              <div className="neptune-score">{neptune_score}</div>
+            <div className="bar">
+              <div className="score">
+                <div className="neptune-score">{neptune_score}</div>
+              </div>
+              {index === 0 && <TridentIcon />}
             </div>
             <div className="details">
               <h3 className="title">{name}</h3>
               <p className="description">{score_description}</p>
             </div>
-            <ChevronRight />
+            <div className="nav">
+              <ChevronRight />
+            </div>
           </div>
         </button>
       </Drawer.Trigger>
