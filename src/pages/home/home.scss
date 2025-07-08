@@ -52,6 +52,13 @@
   padding: 8px 5%;
   width: 100%;
   box-sizing: border-box;
+  font-size: clamp(8px, 2vw, 15px);
+  opacity: 0.85;
+
+  & #custom {
+    color: #9ddad6;
+    cursor: pointer;
+  }
 
   @media screen and (max-width: 500px) {
     overflow-x: auto;
@@ -96,5 +103,50 @@
         white-space: nowrap;
       }
     }
+  }
+}
+
+.score-factor {
+  margin-bottom: clamp(5px, 4vw, 12px);
+  padding-bottom: clamp(3px, 4vw, 8px);
+  border-bottom: 1px solid #333;
+
+  &-header {
+    color: #9ddad6;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 550;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    color: #9ddad6;
+    margin-bottom: clamp(3px, 2vw, 5px);
+    font-size: clamp(12px, 3vw, 18px) !important;
+    opacity: 0.9;
+  }
+
+  p {
+    font-size: clamp(10px, 2vw, 15px);
+    line-height: 1.5;
+    margin-bottom: clamp(3px, 2vw, 5px);
+    opacity: 0.9;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: clamp(5px, 2vw, 15px);
+    margin-top: clamp(3px, 2vw, 5px);
+  }
+  li {
+    font-size: clamp(8px, 2vw, 11px);
+    color: #ccc;
+  }
+
+  .summary-text {
+    font-style: italic;
+    text-align: center;
+    font-size: clamp(10px, 2vw, 15px);
+    margin-top: clamp(3px, 2vw, 7px);
+    opacity: 0.7;
   }
 }
