@@ -11,6 +11,7 @@ import {
   Star,
   ChevronRight,
   CreditCard,
+  Clock3,
 } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { BadgeIcon, TridentIcon } from "../../components/ui/Icon";
@@ -164,6 +165,8 @@ const ResponseCardLarge = ({ data }) => {
     review,
     pricing,
     score_description,
+    booking,
+    opening_hours
   } = data || {};
 
   const iconProps = {
@@ -171,9 +174,9 @@ const ResponseCardLarge = ({ data }) => {
     strokeWidth: 1.7,
   };
 
-  const handleOpenMap = () => {
-    if (map) {
-      window.open(map, "_blank");
+  const handleBooking = () => {
+    if (booking) {
+      window.open(booking, "_blank");
     }
   };
 
@@ -234,11 +237,17 @@ const ResponseCardLarge = ({ data }) => {
               <span>{review}</span>
             </div>
           )}
+          {opening_hours && (
+            <div className="opening-hours cluster">
+              <Clock3 {...iconProps} />
+              <span>{opening_hours}</span>
+            </div>
+          )}
         </div>
       </Drawer.Description>
 
       {map && (
-        <button className="map cluster" onClick={handleOpenMap}>
+        <button className="map cluster" onClick={handleBooking}>
           <CreditCard {...iconProps} size={22} strokeWidth={1.65} />
           <span>Book Now</span>
         </button>
