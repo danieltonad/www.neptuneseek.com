@@ -207,7 +207,7 @@ const ResponseCardLarge = ({ data }) => {
       <Drawer.Description asChild>
         <div className="card-details">
           <iframe
-            src="https://maps.google.com/maps?q=6926+Main+St,+New+York,+NY&output=embed"
+            src={`https://maps.google.com/maps?q=${encodeURIComponent(address)}&output=embed`}
             allowFullScreen
             loading="lazy"
           />
@@ -246,7 +246,7 @@ const ResponseCardLarge = ({ data }) => {
         </div>
       </Drawer.Description>
 
-      {map && (
+      {booking && (
         <button className="map cluster" onClick={handleBooking}>
           <CreditCard {...iconProps} size={22} strokeWidth={1.65} />
           <span>Book Now</span>
